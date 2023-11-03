@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CIFAR-10 Image Classification</title>
+  </head>
+  <body>
+    <h1>CIFAR-10 Image Classification</h1>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <input type="file" name="image" accept=".png">
+      <input type="submit" value="Upload Image">
+    </form>
+    {% if prediction %}
+    <h2>Prediction: {{ prediction }}</h2>
+    <img src="data:image/png;base64,{{ image }}" alt="Uploaded Image">
+    {% endif %}
+  </body>
+</html>
